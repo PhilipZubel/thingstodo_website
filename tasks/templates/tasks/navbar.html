@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Things to do!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}?version=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+        <div id="navbar" class="navbar-menu">
+          <div class="navbar-start">
+            <p class="navbar-item ml-3 mr-5"><strong>Things to do!</strong></p>
+            <a class="navbar-item" href="{% url 'tasks' 'All' %}">Tasks</a>
+            <a class="navbar-item" href="{% url 'welcome' %}">Statistics</a>
+          </div>
+
+          <div class="navbar-end">
+            <p class="navbar-item">{{ user.get_username }}</p>
+
+            <div class="navbar-item">
+                <a class="button is-light" href='{% url  "logout" %}'>
+                  Log Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+    <section class="hero">
+      {% block content %}{% endblock content %}    
+    </section>
+  </body>
+</html>

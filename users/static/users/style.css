@@ -1,0 +1,21 @@
+
+.grid{
+	display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.grid-lg{
+	display: grid !important;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+
+.grid *, .grid-lg * {
+	grid-column: 2 / 3;
+}
+
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}

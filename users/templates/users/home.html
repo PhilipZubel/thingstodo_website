@@ -1,0 +1,23 @@
+{% extends "users/body.html" %}
+
+{% block content %}
+        <div class="hero-body has-text-centered">
+          <div class="container">
+            <h1 class="title my-4">
+              Check what you have to do!
+            </h1>
+            <h2 class="subtitle my-4">
+              Here you can save and view all the tasks you have to do. <br> 
+              Try this out and go create an account below!
+            </h2>
+            <div class="main-buttons my-5 ">
+                <a href="{% url 'register'%}">
+                    <button class="button is-primary is-inverted is-outlined mx-3">Register</button>
+                </a>
+                <a href="{% url 'login'%}">
+                    <button class="button is-primary is-inverted is-outlined mx-3">Log In</button>
+                </a>
+                
+            </div>
+          </div>
+{% endblock content %}

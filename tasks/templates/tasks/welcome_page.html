@@ -1,0 +1,42 @@
+{% extends "users/body.html" %}
+
+{% block content %}
+        <div class="hero-body has-text-centered">
+          <div class="container">
+            <h1 class="title is-size-2 mb-6">
+              Welcome back {{ user.get_username }}!
+            </h1>
+            <div class="columns is-size-5">
+              <div class="column ">
+                <div class="box notification is-dark">
+                  <p class="my-3">Tasks total:</p>
+                  <strong class="is-size-3 pb-5">{{context.tasks_total}}</strong>
+                </div>
+              </div>
+              <div class="column">
+                <div class="box notification is-success">
+                <p class="my-3">Tasks completed:</p>
+                <strong class="is-size-3">{{context.tasks_completed}}</strong>
+                </div>
+              </div>
+              <div class="column">
+                <div class="box notification is-warning">
+                <p class="my-3">Tasks incompleted:</p>
+                <strong class="is-size-3">{{context.tasks_incompleted}}</strong>
+                </div>
+              </div>
+              <div class="column">
+                <div class="box notification is-danger">
+                <p class="my-3">Tasks past due date:</p>
+                <strong class="is-size-3">{{context.tasks_past_deadline}}</strong>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'tasks' 'all' %}">
+              <button class="button is-primary is-inverted is-outlined mt-4 is-size-6">
+                Check out your tasks here!
+              </button>
+            </a>
+          </div>
+         </div> 
+{% endblock content %}

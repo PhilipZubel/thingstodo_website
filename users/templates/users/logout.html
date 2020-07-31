@@ -1,0 +1,14 @@
+{% extends "users/body.html" %}
+
+{% block content %}
+<div class="hero-body ">
+	<div class="tile is-vertical grid">
+	    <h1 class="has-text-centered is-size-2 mb-3">You have been logged out!</h1>
+	    <p class= "has-text-centered is-size-5">
+	          Log in again<a class="ml-2" href="{% url 'login'%}">here</a>
+	    </p>
+	</div>
+    
+</div>
+
+{% endblock content %}
